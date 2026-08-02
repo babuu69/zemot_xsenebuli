@@ -96,6 +96,13 @@ line-height:1.8;
 opacity:.8;
 }
 
+.subtitle{
+font-size:1.25rem;
+line-height:2;
+opacity:.75;
+margin-top:15px;
+}
+
 /* Button */
 
 button{
