@@ -117,7 +117,6 @@ display:none;
 /* Diary pages */
 
 .page{
-.page{
 position:relative;
 max-width:900px;
 margin:70px auto;
@@ -196,6 +195,15 @@ line-height:2;
 white-space:pre-wrap;
 position:relative;
 z-index:2;
+text-align:justify;
+}
+.page p::first-letter{
+font-size:3.8rem;
+float:left;
+line-height:.8;
+padding-right:8px;
+color:#a84d6c;
+font-family:'Caveat',cursive;
 }
 
 /* Main image */
