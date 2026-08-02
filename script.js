@@ -13,30 +13,30 @@ button.addEventListener("click", () => {
     });
 });
 
-// Falling flowers
+function createPetalBurst(){
 
-const flowers = ["🌸","🌺","🌼","💮","🌷"];
+const petals=["🌸","🌺","🌼","💮","🌷"];
 
-setInterval(()=>{
+for(let i=0;i<20;i++){
 
-const flower=document.createElement("div");
+const petal=document.createElement("div");
 
-flower.className="flower";
+petal.className="flower";
 
-flower.innerHTML=flowers[Math.floor(Math.random()*flowers.length)];
+petal.innerHTML=petals[Math.floor(Math.random()*petals.length)];
 
-flower.style.left=Math.random()*window.innerWidth+"px";
+petal.style.left=Math.random()*window.innerWidth+"px";
 
-flower.style.animationDuration=(6+Math.random()*5)+"s";
+petal.style.animationDuration=(3+Math.random()*2)+"s";
 
-flower.style.fontSize=(18+Math.random()*18)+"px";
+petal.style.fontSize=(16+Math.random()*18)+"px";
 
-document.body.appendChild(flower);
+document.body.appendChild(petal);
 
 setTimeout(()=>{
+petal.remove();
+},5000);
 
-flower.remove();
+}
 
-},12000);
-
-},500);
+}
