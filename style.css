@@ -43,8 +43,8 @@ align-items:center;
 text-align:center;
 padding:30px;
 background:linear-gradient(180deg,#f7e7dd,#efe2d2);
+transition:opacity .5s ease;
 }
-
 #cover h1{
 font-size:2.8rem;
 margin:0;
@@ -278,32 +278,55 @@ transform:none!important;
 
   }
 
-/* Falling flowers */
+/* ===== Petal Burst ===== */
 
 .flower{
 position:fixed;
-top:-50px;
-font-size:22px;
+top:-60px;
 pointer-events:none;
-animation:fall linear forwards;
-z-index:9999;
-filter:drop-shadow(0 3px 5px rgba(0,0,0,.15));
+z-index:99999;
+user-select:none;
+animation:petalFall linear forwards;
+filter:drop-shadow(0 4px 8px rgba(0,0,0,.15));
 }
 
-@keyframes fall{
+@keyframes petalFall{
 
 0%{
-transform:translateY(-60px) rotate(0deg);
 opacity:0;
+transform:
+translateY(-80px)
+translateX(0)
+rotate(0deg)
+scale(.8);
 }
 
 10%{
 opacity:1;
 }
 
+30%{
+transform:
+translateY(25vh)
+translateX(20px)
+rotate(90deg)
+scale(1);
+}
+
+60%{
+transform:
+translateY(60vh)
+translateX(-25px)
+rotate(220deg);
+}
+
 100%{
-transform:translateY(110vh) translateX(80px) rotate(720deg);
 opacity:0;
+transform:
+translateY(110vh)
+translateX(35px)
+rotate(360deg)
+scale(.9);
 }
 
 }
