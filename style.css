@@ -162,10 +162,11 @@ box-shadow:
 0 8px 18px rgba(255,255,255,.65) inset;
 
 overflow:hidden;
-animation:fadeUp .8s ease;
-
+opacity:0;
+transform:translateY(80px);
 transition:
-transform .45s ease,
+opacity 1s ease,
+transform 1s ease,
 box-shadow .45s ease;
 }
 
@@ -435,4 +436,27 @@ scale(.9);
 opacity:0;
 transform:scale(1.05);
 filter:blur(8px);
+}
+
+.page.show{
+opacity:1;
+transform:
+translateY(0);
+}
+
+button{
+animation:pulse 2.8s infinite;
+}
+
+@keyframes pulse{
+0%,100%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.05);
+box-shadow:
+0 18px 40px rgba(168,77,108,.45);
+}
+
 }
