@@ -1,10 +1,38 @@
 body{
 margin:0;
 padding:0;
-background:#f5efe4;
+background:
+radial-gradient(circle at top,#f9efe7,#efe2d2 70%);
 font-family:'Cormorant Garamond',serif;
 color:#3d2d21;
+overflow-x:hidden;
 }
+
+/* Floating background */
+
+body::before{
+content:"";
+position:fixed;
+inset:0;
+pointer-events:none;
+opacity:.12;
+background-image:
+radial-gradient(#ffffff 1px,transparent 1px),
+radial-gradient(#d7b7c5 1px,transparent 1px);
+background-size:70px 70px,120px 120px;
+animation:floatStars 80s linear infinite;
+}
+
+@keyframes floatStars{
+from{
+transform:translateY(0);
+}
+to{
+transform:translateY(-300px);
+}
+}
+
+/* Cover */
 
 #cover{
 height:100vh;
@@ -14,83 +42,191 @@ justify-content:center;
 align-items:center;
 text-align:center;
 padding:30px;
-background:linear-gradient(180deg,#f6e6dc,#efe2d2);
+background:linear-gradient(180deg,#f7e7dd,#efe2d2);
 }
 
 #cover h1{
 font-size:2.8rem;
 margin:0;
+letter-spacing:2px;
 }
 
 #cover h2{
 font-family:'Caveat',cursive;
-font-size:3rem;
-margin:10px 0;
+font-size:3.2rem;
+margin:12px 0;
 color:#a84d6c;
 }
 
+#cover p{
+max-width:320px;
+font-size:1.15rem;
+line-height:1.8;
+opacity:.8;
+}
+
+/* Button */
+
 button{
-padding:14px 28px;
+padding:15px 32px;
 border:none;
-border-radius:30px;
-background:#b66b88;
+border-radius:40px;
+background:linear-gradient(135deg,#c97a98,#a84d6c);
 color:white;
 font-size:18px;
 cursor:pointer;
 margin-top:25px;
-transition:.3s;
+transition:.35s;
+box-shadow:0 10px 25px rgba(0,0,0,.18);
 }
 
 button:hover{
-transform:scale(1.05);
+transform:translateY(-3px) scale(1.05);
+box-shadow:0 18px 35px rgba(0,0,0,.22);
 }
 
 .hidden{
 display:none;
 }
 
+/* Diary pages */
+
 .page{
+position:relative;
 max-width:900px;
 margin:60px auto;
-padding:30px;
+padding:35px;
 background:#fffdf8;
 border-radius:18px;
-box-shadow:0 10px 35px rgba(0,0,0,.12);
+border:2px solid #ead7c4;
+box-shadow:0 18px 45px rgba(0,0,0,.14);
 animation:fadeUp .8s ease;
+overflow:hidden;
+}
+
+/* Paper line */
+
+.page::before{
+content:"";
+position:absolute;
+left:45px;
+top:0;
+width:4px;
+height:100%;
+background:#ecd9cb;
+}
+
+/* Paper texture */
+
+.page::after{
+content:"";
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle,#ffffff30 1px,transparent 1px);
+background-size:18px 18px;
+opacity:.25;
+pointer-events:none;
 }
 
 .page h2{
 text-align:center;
 font-family:'Caveat',cursive;
-font-size:2.5rem;
+font-size:2.8rem;
 color:#a84d6c;
+margin-bottom:25px;
 }
 
 .page p{
 font-size:1.2rem;
-line-height:1.9;
+line-height:2;
 white-space:pre-wrap;
+position:relative;
+z-index:2;
 }
 
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:20px;
-margin-top:20px;
-}
+/* Main image */
 
-.gallery img,
 .page img{
-width:100%;
-border-radius:12px;
-box-shadow:0 8px 20px rgba(0,0,0,.15);
+display:block;
+margin:25px auto;
+width:92%;
+border-radius:8px;
+background:white;
+padding:10px 10px 35px;
+box-shadow:0 12px 30px rgba(0,0,0,.18);
 transform:rotate(-2deg);
+transition:.35s;
 }
 
 .page img:hover{
-transform:scale(1.03) rotate(0deg);
-transition:.3s;
+transform:rotate(0deg) scale(1.03);
 }
+
+/* Gallery */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+gap:24px;
+margin-top:25px;
+}
+
+.gallery img{
+padding:8px 8px 30px;
+background:white;
+border-radius:6px;
+transition:.35s;
+}
+
+.gallery img:nth-child(odd){
+transform:rotate(-4deg);
+}
+
+.gallery img:nth-child(even){
+transform:rotate(4deg);
+}
+
+.gallery img:hover{
+transform:rotate(0deg) scale(1.08);
+z-index:10;
+}
+
+/* Heart divider */
+
+.divider{
+text-align:center;
+font-size:26px;
+margin:40px 0;
+opacity:.7;
+}
+
+/* Quote */
+
+.quote{
+font-family:'Caveat',cursive;
+font-size:2rem;
+text-align:center;
+color:#b56384;
+margin:35px 0;
+}
+
+/* Ending */
+
+.end{
+text-align:center;
+padding-bottom:60px;
+}
+
+.end h2{
+font-size:3rem;
+}
+
+.end p{
+font-size:1.3rem;
+}
+
+/* Fade */
 
 @keyframes fadeUp{
 from{
@@ -101,4 +237,73 @@ to{
 opacity:1;
 transform:translateY(0);
 }
+}
+
+/* Mobile */
+
+@media(max-width:700px){
+
+#cover h1{
+font-size:2.2rem;
+}
+
+#cover h2{
+font-size:2.7rem;
+}
+
+.page{
+margin:30px 15px;
+padding:22px;
+}
+
+.page::before{
+display:none;
+}
+
+.page h2{
+font-size:2.2rem;
+}
+
+.page p{
+font-size:1.05rem;
+}
+
+.gallery{
+grid-template-columns:1fr;
+}
+
+.gallery img{
+transform:none!important;
+}
+
+  }
+
+/* Falling flowers */
+
+.flower{
+position:fixed;
+top:-50px;
+font-size:22px;
+pointer-events:none;
+animation:fall linear forwards;
+z-index:9999;
+filter:drop-shadow(0 3px 5px rgba(0,0,0,.15));
+}
+
+@keyframes fall{
+
+0%{
+transform:translateY(-60px) rotate(0deg);
+opacity:0;
+}
+
+10%{
+opacity:1;
+}
+
+100%{
+transform:translateY(110vh) translateX(80px) rotate(720deg);
+opacity:0;
+}
+
 }
