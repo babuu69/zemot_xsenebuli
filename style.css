@@ -1,17 +1,30 @@
 body{
-opacity:1;
+
+opacity:0;
 transition:opacity 1.4s ease;
 
 margin:0;
 padding:0;
+
 background:
 radial-gradient(circle at top,#fff7f1,#f5e5d4 35%,#ead8c4 100%);
+
 background-attachment:fixed;
+
 font-family:'Cormorant Garamond',serif;
+
 color:#3d2d21;
+
 overflow-x:hidden;
+
 }
 
+
+body.loaded{
+
+opacity:1;
+
+}
 /* Floating background */
 
 body::before{
