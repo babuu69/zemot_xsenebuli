@@ -2,7 +2,8 @@ body{
 margin:0;
 padding:0;
 background:
-radial-gradient(circle at top,#f9efe7,#efe2d2 70%);
+radial-gradient(circle at top,#fff7f1,#f5e5d4 35%,#ead8c4 100%);
+background-attachment:fixed;
 font-family:'Cormorant Garamond',serif;
 color:#3d2d21;
 overflow-x:hidden;
