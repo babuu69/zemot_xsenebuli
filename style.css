@@ -71,16 +71,22 @@ left:50%;
 transform:translateX(-50%);
 }
 #cover h1{
-font-size:2.8rem;
+font-size:3rem;
 margin:0;
-letter-spacing:2px;
+letter-spacing:3px;
+text-shadow:
+0 4px 20px rgba(255,255,255,.8),
+0 6px 30px rgba(0,0,0,.08);
 }
 
 #cover h2{
 font-family:'Caveat',cursive;
-font-size:3.2rem;
-margin:12px 0;
+font-size:3.8rem;
+margin:15px 0;
 color:#a84d6c;
+
+text-shadow:
+0 5px 20px rgba(168,77,108,.35);
 }
 
 #cover p{
@@ -93,21 +99,34 @@ opacity:.8;
 /* Button */
 
 button{
-padding:15px 32px;
+padding:16px 38px;
 border:none;
-border-radius:40px;
-background:linear-gradient(135deg,#c97a98,#a84d6c);
-color:white;
-font-size:18px;
+border-radius:999px;
 cursor:pointer;
-margin-top:25px;
+
+font-size:18px;
+font-weight:bold;
+
+color:white;
+
+background:
+linear-gradient(135deg,#cf7d9c,#a84d6c);
+
+box-shadow:
+0 12px 30px rgba(168,77,108,.35),
+0 2px 6px rgba(255,255,255,.4) inset;
+
 transition:.35s;
-box-shadow:0 10px 25px rgba(0,0,0,.18);
 }
 
 button:hover{
-transform:translateY(-3px) scale(1.05);
-box-shadow:0 18px 35px rgba(0,0,0,.22);
+transform:
+translateY(-5px)
+scale(1.05);
+
+box-shadow:
+0 22px 45px rgba(168,77,108,.45),
+0 2px 6px rgba(255,255,255,.5) inset;
 }
 
 .hidden{
@@ -235,10 +254,15 @@ margin-top:25px;
 }
 
 .gallery img{
-padding:8px 8px 30px;
+padding:10px 10px 35px;
 background:white;
-border-radius:6px;
-transition:.35s;
+
+border-radius:2px;
+
+box-shadow:
+0 15px 35px rgba(0,0,0,.18);
+
+transition:.4s;
 }
 
 .gallery img:nth-child(odd){
