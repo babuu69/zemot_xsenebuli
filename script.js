@@ -4,6 +4,8 @@ const button = document.getElementById("openBook");
 const cover = document.getElementById("cover");
 const book = document.getElementById("book");
 
+console.log(button, cover, book);
+
 button.addEventListener("click",()=>{
 
 createPetalBurst();
