@@ -1,12 +1,8 @@
+window.addEventListener("DOMContentLoaded",()=>{
+
 const button = document.getElementById("openBook");
 const cover = document.getElementById("cover");
 const book = document.getElementById("book");
-
-window.addEventListener("load",()=>{
-
-document.body.classList.add("loaded");
-
-});
 
 button.addEventListener("click",()=>{
 
@@ -24,15 +20,6 @@ window.scrollTo({
 top:0,
 behavior:"smooth"
 });
-
-const music=document.getElementById("bgMusic");
-
-if(music){
-
-music.volume=.35;
-music.play();
-
-}
 
 animatePages();
 
@@ -91,3 +78,5 @@ setTimeout(()=>petal.remove(),7000);
 }
 
 }
+
+});
