@@ -1,8 +1,15 @@
+window.addEventListener("load",()=>{
+    document.body.classList.add("loaded");
+});
+
+
 window.addEventListener("DOMContentLoaded",()=>{
 
 const button = document.getElementById("openBook");
 const cover = document.getElementById("cover");
 const book = document.getElementById("book");
+
+console.log(button);
 
 console.log(button, cover, book);
 
