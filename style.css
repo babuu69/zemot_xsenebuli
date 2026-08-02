@@ -53,7 +53,10 @@ overflow:hidden;
 background:
 linear-gradient(180deg,#faeee6,#efe2d2);
 
-transition:opacity .5s ease;
+transition:
+opacity .9s ease,
+transform .9s ease,
+filter .9s ease;
 }
 #cover::before{
 content:"";
@@ -427,19 +430,11 @@ scale(.9);
 
 }
 
-#cover{
-transition:
-opacity .9s ease,
-transform .9s ease;
-}
 
 #cover.opening{
-
 opacity:0;
-
-transform:
-scale(1.05);
-
+transform:scale(1.05);
 filter:blur(8px);
+}
 
 }
