@@ -460,3 +460,43 @@ box-shadow:
 }
 
 }
+/* ===== 3D Diary Opening ===== */
+
+#coverWrapper{
+
+perspective:1200px;
+
+}
+
+#cover{
+
+transform-origin:left center;
+
+}
+
+#cover.opening{
+
+animation:openDiary 1s ease forwards;
+
+}
+
+
+@keyframes openDiary{
+
+0%{
+
+transform:
+rotateY(0deg);
+
+}
+
+100%{
+
+transform:
+rotateY(-100deg);
+
+opacity:0;
+
+}
+
+}
