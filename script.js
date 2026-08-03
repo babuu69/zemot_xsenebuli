@@ -14,30 +14,17 @@ console.log(button, cover, book);
 
 function animatePages(){
 
-const pages=document.querySelectorAll(".page");
+const pages = document.querySelectorAll(".page");
 
-const observer=new IntersectionObserver(entries=>{
+pages.forEach((page, index) => {
 
-entries.forEach(entry=>{
+setTimeout(() => {
+page.classList.add("show");
+}, index * 250);
 
-if(entry.isIntersecting){
-entry.target.classList.add("show");
-}
-
-});
-
-},{
-threshold:.15
-});
-
-
-pages.forEach(page=>{
-observer.observe(page);
 });
 
 }
-
-
 
 function createPetalBurst(){
 
