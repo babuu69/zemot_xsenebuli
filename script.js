@@ -20,7 +20,7 @@ pages.forEach((page, index) => {
 
 setTimeout(() => {
 page.classList.add("show");
-}, index * 250);
+}, index * 350);
 
 });
 
