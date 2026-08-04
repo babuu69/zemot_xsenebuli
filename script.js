@@ -16,12 +16,25 @@ function animatePages(){
 
 const pages = document.querySelectorAll(".page");
 
-pages.forEach((page, index) => {
+const observer = new IntersectionObserver((entries)=>{
 
-setTimeout(() => {
-page.classList.add("show");
-}, index * 350);
+entries.forEach(entry=>{
 
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+observer.unobserve(entry.target);
+
+}
+
+});
+
+},{
+threshold:0.2
+});
+
+pages.forEach(page=>{
+observer.observe(page);
 });
 
 }
