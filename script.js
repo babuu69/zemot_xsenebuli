@@ -89,13 +89,14 @@ cover.style.display="none";
 
 book.classList.remove("hidden");
 
-animatePages();
+requestAnimationFrame(() => {
+    animatePages();
+});
 
 window.scrollTo({
 top:0,
 behavior:"smooth"
 });
-
 },900);
 
 
